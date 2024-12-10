@@ -1,0 +1,506 @@
+a {
+  text-decoration: none;
+  color: black;
+  padding: 0px;
+  margin: 0px;
+  display: inline-block; 
+  vertical-align: top;  /* Prevent vertical spacing */
+}
+
+/* Hide the extended text initially */
+.hidden-text {
+  display: none;
+}
+
+/* Show the extended text when expanded */
+.text.expanded .hidden-text {
+  display: inline;
+}
+
+.toggle-btn {
+  text-decoration: underline; /* Underlined text */
+  background: none; /* Remove background */
+  color: inherit; /* Inherit the text color */
+  border: none; /* No border */
+  padding: 0; /* No padding */
+  cursor: pointer; /* Retain pointer cursor for clickable element */
+  font: inherit; /* Inherit font styles from parent */
+}
+
+/* 
+.toggle-btn:hover {
+  background-color: #ffb4eb;
+}
+
+/* General column styling */
+.column-unit {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body, html {
+  text-transform: uppercase;
+
+  background-color: #fefefd;
+  display:flex;
+  margin: 0;
+ 
+  padding: 0.3vw;
+  width: 100vw;
+  height: 100vh;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1vh;
+  
+}
+
+.logo {
+  width: 5vw;
+  
+}
+
+/* Main container background and overflow handling */
+.headsetsup {
+  display: grid;
+  width: 100%;
+  overflow-x: hidden;
+  padding: 0;
+
+}
+
+/* Grid layout for the main headset section */
+.headset {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 1fr 1fr;
+  gap: 1vw;
+  align-items: center;
+  width: 100%;
+
+  justify-content: space-between;
+  padding: 0px;
+  position: relative;
+
+}
+
+/* Grid layout for the description section */
+.headsetdes {
+  display: grid;
+  grid-template-columns: 0.93fr 1fr 2.5fr 1fr;
+  gap: 0;
+  align-items: baseline;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 5vh;
+}
+
+.description {
+  text-align: left;
+}
+
+.projects {
+  position: relative;
+  cursor: pointer;
+  text-align: left;
+
+}
+
+.dropdown-menu {
+  display: none; /* Hide the dropdown by default */
+  position: absolute;
+  top: 100%; /* Position the dropdown below the "Projects" section */
+  left: 0;
+  margin-top: 8px;
+  background-color: #ffffffe9;
+  border: 1px solid #000000;
+  /box-shadow: 0 8px 2px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* Ensure it appears above other content */
+}
+
+.dropdown-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0.3vh;
+}
+
+.dropdown-menu ul li {
+  padding: 8px 1px 8px 1px;
+  text-align: left; /* Align text to the left */
+}
+
+.dropdown-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  display: block; /* Ensures the links take up full width of the list item */
+}
+
+/* Optional: add hover effect for dropdown items */
+.dropdown-menu ul li:hover {
+  background-color: #f1f1f1;
+}
+
+
+
+
+/* Align and structure left, middle, and right sections */
+.headleft, .headmiddle, .headright {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+/* Section-specific styling */
+.headleft {
+  position: relative;
+  text-align: left;
+}
+
+.headmiddle {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.headright {
+  text-align: right;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+
+.text-affirm {
+  width: 100%;               /* Full width of its container */
+  height: 2vw;              /* Height is set to 10% of the viewport width */
+  
+  display: flex;             /* Use flexbox for centering the text */
+  align-items: center;       /* Vertically center the content */
+  justify-content: center;   /* Horizontally center the content */
+  text-align: center;        /* Ensure the text is centered */
+  padding: 0;                /* Remove any default padding */
+  
+}
+
+
+.thumbnailgallery {
+  display: grid;             /* Use flexbox for child items */
+  justify-content: center;   /* Horizontally center the items in the gallery */
+  align-items: center;       /* Vertically center the items in the gallery */
+  align-content: center;     /* Align the content in the gallery */
+  height: auto;
+  width: 60vw;               /* Set the width of the gallery */
+  gap: 1vw;                  /* Space between images */
+  margin-top: auto;
+  padding: auto;
+}
+
+.thumbphotos-row-1{
+  display: grid;
+  grid-template-columns: 0.8fr 0.2fr 1fr;
+  margin-bottom: 1vh;
+}
+
+.thumbphotos-row-2{
+  display: grid;
+  grid-template-columns: 1fr 0.2fr 0.8fr;
+  margin-bottom: 1vh;
+}
+
+.thumbphotos-row-3{
+  display: grid;
+  grid-template-columns: 0.8fr 0.2fr 1fr;
+}
+
+.thumbnailgallery img {
+  padding-bottom: 0.5vh;
+  width: 100%; /* Make images fill their grid cell */
+  height: auto; /* Keep the aspect ratio of images */
+  object-fit: cover; /* Ensures images cover the space without distortion */
+}
+
+.thumbphotos{
+  text-align: center;
+}
+
+.thumbphotos img {
+}
+
+.thumbnailgallery a:hover {
+}
+
+.thumbphotos a:hover {
+  transform: scale(1); /* Slightly enlarge the image */
+}
+
+.thumbphotos a:hover {
+  transition-duration: 0.5s;
+  color: rgb(131, 131, 131);
+}
+
+.thumbnailgallery img:hover {
+  /box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
+
+.thumbnailgallery:hover {
+}
+
+
+/* Gallery Slideshow */
+.gallery-slideshow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Media container for the slides */
+.media-container {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+  /*cursor: pointer;  Default cursor 
+  cursor: url('/imgs/eyesrolling.png'), pointer;
+  cursor: -webkit-url('/imgs/eyesrolling.png'), auto; Safari/Chrome */
+}
+
+/* Individual media items */
+.media-item {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.media-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.zoomable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Optionally, keep the navigation arrows if needed for additional feedback */
+.prev-btn, .next-btn {
+  display: block; /* Hide navigation buttons */
+  
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /background-color: rgba(247, 0, 0, 0.5);
+  background: none;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 2vw;
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.prev-btn:hover, .next-btn:hover {
+}
+
+/* Video styling */
+.media-container {
+  position: relative; /* Needed for positioning the mute button inside the container */
+}
+
+.media-item video {
+  width: 100vw;  /* Set width to 70% of the parent container */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100%;
+  max-width: 100%;
+}
+
+
+/* Mute/unmute button styling */
+.mute-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+
+  width: 5vh;
+  height: auto;
+  background: none;
+}
+
+.mute-btn:hover {
+}
+
+
+
+/* Gallery progress bar container */
+.progress-bar {
+  display:flex;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  z-index: 100;
+}
+
+
+.segment {
+  flex: 1;
+  height: 100%;
+  background-color: #c5c5c5;
+  margin-right: 5px;
+}
+
+.segment.active {
+  background-color: #ffffff; 
+}
+
+/*
+.progress-bar .segment {
+  background-color: #ccc;
+  transition: background-color 0.3s ease;
+}
+.progress-bar .segment.active {
+  background-color: #007bff;
+}
+*/
+
+
+
+@media only screen and (max-width: 650px) {
+
+  html, body {
+    overflow-x: hidden; /* 스크롤 제한 해제 */
+    height: auto;
+    overflow-y: visible;
+}
+
+.headset{
+  margin-bottom: 3vw;
+  padding-top: 3vw;
+}
+
+.progress-bar{
+  display: none;
+}
+
+.mute-btn {
+  width: 8vw;
+}
+  .gallery-slideshow {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center images horizontally */
+    justify-content: flex-start; /* Start from the top */
+    overflow: visible; /* Allow full view of the content */
+    width: auto; /* Adjust width as needed */
+    margin: 0 auto; /* Center the container */
+  }
+
+  .media-container {
+    display: block; /* Prevent any slideshow effects */
+    transition: none; /* Remove animation */
+  }
+
+  .media-item {
+    width: auto; /* Let images take natural width */
+    margin: 10px 0; /* Add spacing between images */
+  }
+
+  .media-item img {
+    max-width: 100%; /* Ensure images scale properly */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+
+  .thumbnailgallery {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center images horizontally */
+    justify-content: flex-start; /* Start from the top */
+    overflow: visible; /* Allow full view of the content */
+    width: auto; /* Adjust width as needed */
+    margin: 0 auto; /* Center the container */
+    margin-bottom: 0vw;
+   }
+
+   .thumbphotos-row-1{
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  .thumbphotos-row-2{
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  .thumbphotos-row-3{
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .thumbphotos{
+    margin-bottom: 0vw;
+  }
+
+
+  .prev-btn, .next-btn {
+    display: none; /* Hide navigation buttons */
+  }
+  
+  .progress-bar {
+    display:none;
+  }
+
+}
+
+
+
+
+
+@media only screen and (min-width: 1650px) {
+  body {
+  }
+
+  .gallery-slideshow {
+    width: 80%;
+    height: auto;
+  }
+
+  .thumbnailgallery {
+   margin-top: 5vw;
+   margin-bottom: 5vw;
+   width: 53vw;               /* Set the width of the gallery */
+  }
+}

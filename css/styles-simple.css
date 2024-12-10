@@ -1,0 +1,82 @@
+a {
+    text-decoration: none;
+    color: black;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block; 
+   / background-color: #ffbcbc;
+    vertical-align: top;  /* Prevent vertical spacing */
+  }
+
+
+body, html {
+
+    display:flex;
+    margin: 0;
+   
+    padding: 0.3vw;
+    width: 100vw;
+    height: 100vh;
+  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1vh;
+    
+  }
+  
+  .blocks {
+    font-size: 1.5vh;
+    display: flex;
+    width: 100vw;          /* Full viewport width */
+    height: 100vh;         /* Full viewport height */
+    margin: 0;
+    flex-direction: row;   /* Arrange items in a row */
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .block-1 {
+    width: 50%;            /* Each block takes 50% of the screen */
+    height: 100vh;          /* Full height of the screen */
+    display: flex;
+    align-items: center;   /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    position: relative;    /* Allow absolute positioning inside */
+  }
+  
+  .block-1 a {
+    position: absolute;    /* Make the <a> cover the entire block */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;         /* Use flex to center text */
+    align-items: center;   /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    text-decoration: none;  /* Remove the default underline */
+    color: inherit;         /* Inherit color from the parent div */
+    font-size: 2vw;         /* Optional: Adjust font size */
+  }
+  
+
+.block-1:hover {
+    background-color: rgb(255, 208, 0);
+    animation-delay: 2s;
+}
+
+  footer {
+  
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+  }
