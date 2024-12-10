@@ -296,6 +296,30 @@ footer {
   height: auto;
 }
 
+
+
+
+
+
+
+
+
+.media-item.zoomable img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Removes extra spacing below the image */
+}
+
+
+
+
+
+
+
+
+
+
+
 .zoomable {
   display: flex;
   justify-content: center;
@@ -435,6 +459,7 @@ footer {
   .media-item {
     width: auto; /* Let images take natural width */
     margin: 10px 0; /* Add spacing between images */
+    position: relative;
   }
 
   .media-item img {
@@ -442,7 +467,8 @@ footer {
     height: auto; /* Maintain aspect ratio */
   }
 
-
+ 
+ 
   .thumbnailgallery {
     display: flex;
     flex-direction: column; /* Stack items vertically */

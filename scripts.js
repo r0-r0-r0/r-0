@@ -129,6 +129,9 @@ showImage(currentIndex);
 
 
 
+
+
+
   
   // Check screen size and location, and initialize gallery functionality if conditions are met
 function checkAndInitializeGallery() {
