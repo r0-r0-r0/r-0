@@ -415,7 +415,9 @@ footer {
     overflow-x: hidden; /* 스크롤 제한 해제 */
     height: auto;
     overflow-y: visible;
-
+    
+    align-items: center;
+    justify-content: center;
 }
 
   .headset{
@@ -424,6 +426,7 @@ footer {
   }
  
   .gallery-slideshow {
+
     display: flex;
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center images horizontally */
@@ -431,6 +434,7 @@ footer {
     overflow: visible; /* Allow full view of the content */
     width: auto; /* Adjust width as needed */
     margin: 0 auto; /* Center the container */
+
   }
 
   .media-container {
@@ -460,10 +464,17 @@ footer {
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center images horizontally */
     justify-content: flex-start; /* Start from the top */
-    overflow: visible; /* Allow full view of the content */
-    width: auto; /* Adjust width as needed */
+    overflow-y: visible; /* Allow full view of the content */
+    overflow-x: hidden;
+
+   
     margin: 0 auto; /* Center the container */
     margin-bottom: 2vw;
+    width: 101vw;
+    margin-left: -1vw;
+
+
+
    }
 
    .thumbphotos-row-1{
