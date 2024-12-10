@@ -1,3 +1,7 @@
+img, video {
+  pointer-events: none;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -122,7 +126,7 @@ body, html {
   margin-top: 8px;
   background-color: #ffffffe9;
   border: 1px solid #000000;
-  /box-shadow: 0 8px 2px rgba(0, 0, 0, 0.2);
+ 
   z-index: 9999; /* Ensure it appears above other content */
 }
 
@@ -252,12 +256,7 @@ footer {
   color: rgb(131, 131, 131);
 }
 
-.thumbnailgallery img:hover {
-  /box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
-}
 
-.thumbnailgallery:hover {
-}
 
 
 /* Gallery Slideshow */
@@ -310,7 +309,7 @@ footer {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  /background-color: rgba(247, 0, 0, 0.5);
+ 
   background: none;
   color: rgb(255, 255, 255);
   border: none;
@@ -359,9 +358,6 @@ footer {
   background: none;
 }
 
-.mute-btn:hover {
-}
-
 
 
 /* Gallery progress bar container */
@@ -404,6 +400,7 @@ footer {
     overflow-x: hidden; /* 스크롤 제한 해제 */
     height: auto;
     overflow-y: visible;
+    
 }
 
 .headset{
@@ -423,9 +420,11 @@ footer {
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center images horizontally */
     justify-content: flex-start; /* Start from the top */
-    overflow: visible; /* Allow full view of the content */
+    overflow-y: visible; /* Allow full view of the content */
+    overflow-x: hidden;
     width: auto; /* Adjust width as needed */
     margin: 0 auto; /* Center the container */
+    margin-left: -0.1vw;
   }
 
   .media-container {

@@ -1,3 +1,9 @@
+img, video {
+  pointer-events: none;
+}
+
+
+
 a {
   text-decoration: none;
   color: black;
@@ -493,7 +499,7 @@ footer {
   }
 
   .thumbphotos{
-    /margin-bottom: 1.3vw;
+   
   }
 
 }
