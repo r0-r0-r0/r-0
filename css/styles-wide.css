@@ -470,14 +470,14 @@ footer {
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center images horizontally */
     justify-content: flex-start; /* Start from the top */
-    overflow-y: visible; /* Allow full view of the content */
+    overflow-y: hidden; /* Allow full view of the content */
     overflow-x: hidden;
 
    
     margin: 0 auto; /* Center the container */
     margin-bottom: 2vw;
     width: 101vw;
-    margin-left: -1vw;
+    margin-left: -0.7vw;
 
 
 
