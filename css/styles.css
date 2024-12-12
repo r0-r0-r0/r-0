@@ -405,6 +405,10 @@ footer {
     
 }
 
+.vimeo-player  {
+  min-height: 100vw;
+}
+
 .headset{
   margin-bottom: 3vw;
   padding: 3vw;
