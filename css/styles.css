@@ -290,17 +290,10 @@ footer {
   text-align: center;
 }
 
-
 .media-item img {
   max-width: 100%;
   height: auto;
 }
-
-
-
-
-
-
 
 
 
@@ -309,15 +302,6 @@ footer {
   height: auto; /* Maintain aspect ratio */
   display: block; /* Removes extra spacing below the image */
 }
-
-
-
-
-
-
-
-
-
 
 
 .zoomable {

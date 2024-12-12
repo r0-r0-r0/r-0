@@ -235,6 +235,8 @@ footer {
   padding: 0;
 }
 
+
+
 /*
 .thumbphotos-row-1{
   display: grid;
@@ -286,8 +288,7 @@ footer {
   color: rgb(255, 255, 255);
 }
 
-.thumbphotos img {
-}
+
 
 .overlay-text-sub {
   margin-top: 1vw;
@@ -296,8 +297,7 @@ footer {
   font-weight: 100;
 }
 
-.thumbnailgallery a:hover {
-}
+
 
 .thumbphotos a:hover {
   transform: scale(1); /* Slightly enlarge the image */
@@ -312,13 +312,21 @@ footer {
   /box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
 }
 
-.thumbnailgallery:hover {
-}
+
+
+
+
+
+
+
+
+
+
 
 
 /* Gallery Slideshow */
 .gallery-slideshow {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -347,10 +355,15 @@ footer {
   text-align: center;
 }
 
-
 .media-item img {
   max-width: 100%;
   height: auto;
+}
+
+.media-item.zoomable img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Removes extra spacing below the image */
 }
 
 .zoomable {
@@ -361,17 +374,17 @@ footer {
 
 /* Optionally, keep the navigation arrows if needed for additional feedback */
 .prev-btn, .next-btn {
-  display: none; /* Hide navigation buttons */
-  /*
+  display: block; /* Hide navigation buttons */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(247, 0, 0, 0.5);
-  color: white;
+  background: none;
+  color: rgb(255, 255, 255);
   border: none;
-  padding: 10px;
+  padding: 20px;
   cursor: pointer;
-  z-index: 10;*/
+  z-index: 10;
+  font-size: 2vw;
 }
 
 .prev-btn {
@@ -383,8 +396,142 @@ footer {
 }
 
 .prev-btn:hover, .next-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* Video styling */
+.media-container {
+  position: relative; /* Needed for positioning the mute button inside the container */
+}
+
+.media-item video {
+  width: 100vw;  /* Set width to 70% of the parent container */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100%;
+  max-width: 100%;
+}
+
+
+/* Mute/unmute button styling */
+.mute-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+
+  width: 5vh;
+  height: auto;
+  background: none;
+}
+
+
+
+/* Gallery progress bar container */
+.progress-bar {
+  display:flex;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  z-index: 100;
+}
+
+
+.segment {
+  flex: 1;
+  height: 100%;
+  background-color: #c5c5c5;
+  margin-right: 5px;
+}
+
+.segment.active {
+  background-color: #ffffff; 
+}
+
+
+
+
+
+
+.hello {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Better proportion */
+  height: auto; /* Makes height dynamic */
+  width: 90%;
+  /background-color: aquamarine;
+  /align-items: center; /* Aligns grid items vertically */
+  margin: 10vw;
+}
+
+.text-vertical {
+  display: grid; /* Enables grid-based alignment */
+  justify-content: start; /* Aligns content to the left */
+  align-items: start; /* Aligns text at the top */
+  text-align: left;
+  width: 100%;
+  height: auto; /* Keeps height dynamic */
+  /background-color: pink;
+  padding: 2vw; /* Replaces margin for consistent internal spacing */
+  box-sizing: border-box; /* Includes padding within the element's dimensions */
+  
+}
+
+.portrait{
+  display: grid; /* Enables grid-based alignment */
+  width: 100%;
+  align-items: center; /* Aligns grid items vertically */
+}
+
+.portrait img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.gallery-block {
+  /* Add any necessary styles here */
+}
+
+.big-t {
+  font-size: 2vw;
+}
+
+.body-t {
+  font-size: 1.5vw;
+}
+
+.paintings-gallery {
+  display: grid; /* Changed to grid */
+  width: 100%;
+  height: auto;
+  grid-template-columns: repeat(4, 1fr); /* Simplified column definition */
+  gap: 10px; /* Adds spacing between items */
+  padding: 0; /* Simplified syntax */
+  position: relative;
+}
+
+.painting-block {
+  position: relative;
+  width: 100%; /* Ensures blocks scale correctly within the grid */
+  height: auto; /* Maintains aspect ratio of content */
+}
+
+.painting-block img {
+  width: 100%; /* Ensures the image fills the block's width */
+  height: auto; /* Maintains the aspect ratio */
+  object-fit: cover; /* Crops the image if necessary to fit the block dimensions */
+  border-radius: 4px; /* Optional: Adds slightly rounded corners */
+}
+
+
+
+
+
+
+
+
 
 
 @keyframes blurInOut {
@@ -414,6 +561,19 @@ footer {
   filter: none; /* Ensure no blur effect while hovering */
 }
 
+.year {
+  margin: 2vw;
+}
+
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 650px) {
 
@@ -424,6 +584,8 @@ footer {
     
     align-items: center;
     justify-content: center;
+    margin-left: 0vw;
+    width: 100vw;
 }
 
   .headset{
@@ -474,13 +636,11 @@ footer {
     overflow-x: hidden;
 
    
-    margin: 0 auto; /* Center the container */
+    
     margin-bottom: 2vw;
     width: 101vw;
-    margin-left: -0.7vw;
-
-
-
+    margin-left: 0;
+    margin-right: 0;
    }
 
    .thumbphotos-row-1{
