@@ -33,12 +33,6 @@ a {
   100% { color: red; }
 }
 
-.fun {
-  margin: 2vw;
-  font-size: 2vw;
-  animation: rainbow 3s linear infinite;
-  text-decoration: underline;
-}
 
 /* Hide the extended text initially */
 .hidden-text {
@@ -665,13 +659,31 @@ footer {
 
 
 
+.wip  {
+    display: flex; /* Enables flexbox for alignment */
+    flex-direction: column; /* Stacks child elements vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    text-align: center;
+    padding-top: 10vw;
+}
 
+.fun {
+  padding: 3vw;
+  font-size: 1vw;
+  animation: rainbow 3s linear infinite;
+  text-decoration: underline;
+}
 
 
 
 
 
 @media only screen and (max-width: 650px) {
+
+  .fun {
+    font-size: 3vw;
+  }
 
   html, body {
     overflow-x: hidden; /* 스크롤 제한 해제 */
