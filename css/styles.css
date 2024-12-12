@@ -261,11 +261,11 @@ footer {
 
 /* Gallery Slideshow */
 .gallery-slideshow {
-  display: flex;
+  display: flexbox;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  width: 100%;
+  max-width: 130vh;
   height: auto;
   position: relative;
   box-sizing: border-box;
@@ -350,20 +350,17 @@ footer {
 
 /* Mute/unmute button styling */
 .mute-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  position: fixed;
+  top: 2vh; /* Set position to the top 20% of the viewport */
+  right: 10vw; /* Adjust for better responsiveness */
   border: none;
-  padding: 10px;
+  padding: 0;
   cursor: pointer;
-  z-index: 10;
-
-  width: 5vh;
+  z-index: 9999;
+  max-width: 3vw; /* Maintain proportional size */
   height: auto;
   background: none;
 }
-
-
 
 /* Gallery progress bar container */
 .progress-bar {
@@ -410,7 +407,7 @@ footer {
 
 .headset{
   margin-bottom: 3vw;
-  padding-top: 3vw;
+  padding: 3vw;
 }
 
 .progress-bar{
@@ -418,8 +415,13 @@ footer {
 }
 
 .mute-btn {
-  width: 8vw;
+  position: absolute;
+  top: 1vh; /* Set position to the top 20% of the viewport */
+  padding: 1vh;
+  width: 15vw; /* Maintain proportional size */
+  height: 10vw;
 }
+
   .gallery-slideshow {
     display: flex;
     flex-direction: column; /* Stack items vertically */
@@ -489,6 +491,67 @@ footer {
     display:none;
   }
 
+  
+  .mute-btn {
+      position: fixed;
+      top: 1vh; /* Set position to the top 20% of the viewport */
+      right: 3vw; /* Adjust for better responsiveness */
+      padding: 0;
+      max-width: 6vw; /* Maintain proportional size */
+    
+    }
+
+    .headsetdes {
+      display: flex;
+      flex-direction: column; 
+     
+      gap: 0;
+      align-items: baseline;
+      width: 100%;
+      margin: 0;
+      margin-bottom: 5vh;
+      padding: 3vw;
+      box-sizing: border-box;
+    }
+
+    .headright {
+      display: none;
+    }
+
+    .projects {
+      display: none;
+    }
+    .headleft{
+      text-transform: none;
+      color: white;
+    }
+
+    .headleft a {
+      color: white;
+    }
+    .hidden-text{
+      display: contents;
+    }
+    
+    .toggle-btn{
+      display: none;
+    }
+
+.text {
+    color: rgb(255, 255, 255);
+    font-size: 2.3vw;
+    line-height: 2rem;
+  }
+
+
+  .text:not(.no-red) {
+    color: rgb(0, 0, 0); 
+  }
+
+
+  .blackbg-text a {
+    color: #000000;
+  }
 }
 
 
@@ -508,3 +571,27 @@ footer {
    width: 53vw;               /* Set the width of the gallery */
   }
 }
+
+/*
+@media only screen and (max-height: 800px) {
+
+  .mute-btn {
+    top: 50%;
+    right: auto;
+    left: 10%;
+    width: 6vh; 
+  }
+
+}
+
+
+@media only screen and (max-height: 1000px) {
+
+  .gallery-slideshow {
+    width: 100vh;
+    height: auto;
+  }
+
+}
+*/
+
