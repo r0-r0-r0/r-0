@@ -224,7 +224,6 @@ footer {
 }
 
 
-
 .thumbnailgallery {
   display: grid;             /* Use flexbox for child items */
   justify-content: center;   /* Horizontally center the items in the gallery */
@@ -235,27 +234,6 @@ footer {
   padding: 0;
 }
 
-
-
-/*
-.thumbphotos-row-1{
-  display: grid;
-  grid-template-columns: 0.8fr 0.2fr 1fr;
- 
-}
-
-.thumbphotos-row-2{
-  display: grid;
-  grid-template-columns: 1fr 0.2fr 0.8fr;
- 
-}
-
-.thumbphotos-row-3{
-  display: grid;
-  grid-template-columns: 0.8fr 0.2fr 1fr;
-}
-*/
-
 .thumbnailgallery img {
   width: 100vw; /* Make images fill their grid cell */
   height: auto; /* Keep the aspect ratio of images */
@@ -265,7 +243,7 @@ footer {
 .thumbphotos{
   position: relative; /* 컨테이너를 기준으로 텍스트 위치를 설정하기 위함 */
   display: inline-block; /* 이미지를 컨테이너로 감쌈 */
-  width: 100% 
+  width: 100%;
   height: auto;
   margin-bottom: -0.33vh;
 }
@@ -277,10 +255,8 @@ footer {
   left: 50%; /* 이미지의 중앙에 배치 */
   transform: translate(-50%, -50%); /* 중앙 정렬 */
   color: white; /* 텍스트 색상 */
-  
   font-size: 2vw; /* 텍스트 크기 */
   font-weight: 400;
-  
   text-align: center; /* 텍스트 중앙 정렬 */
 }
 
@@ -288,16 +264,12 @@ footer {
   color: rgb(255, 255, 255);
 }
 
-
-
 .overlay-text-sub {
   margin-top: 1vw;
   font-size: 1vw;
   text-decoration: underline;
   font-weight: 100;
 }
-
-
 
 .thumbphotos a:hover {
   transform: scale(1); /* Slightly enlarge the image */
@@ -307,19 +279,6 @@ footer {
   transition-duration: 0.5s;
   color: rgb(131, 131, 131);
 }
-
-.thumbnailgallery img:hover {
-  /box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
-}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -418,7 +377,6 @@ footer {
   padding: 10px;
   cursor: pointer;
   z-index: 10;
-
   width: 5vh;
   height: auto;
   background: none;
@@ -436,7 +394,6 @@ footer {
   z-index: 100;
 }
 
-
 .segment {
   flex: 1;
   height: 100%;
@@ -451,15 +408,11 @@ footer {
 
 
 
-
-
 .hello {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Better proportion */
   height: auto; /* Makes height dynamic */
   width: 90%;
-  /background-color: aquamarine;
-  /align-items: center; /* Aligns grid items vertically */
   margin-top: 10vw;
 }
 
@@ -469,10 +422,8 @@ footer {
   justify-content: left; /* Aligns content to the left */
   align-items: start; /* Ensures content starts at the top */
   text-align: left;
-
   width: 100%;
   height: auto; /* Keeps height dynamic */
-  /background-color: pink;
   box-sizing: border-box; /* Includes padding within the element's dimensions */
 }
 
@@ -520,7 +471,6 @@ footer {
   padding: 0; /* Simplified syntax */
   position: relative;
   text-align: center;
-  /background-color: aqua;
 }
 
 .artwork-block {
@@ -597,7 +547,7 @@ footer {
 
 .artwork-popup-body {
   display: grid; /* Enables CSS Grid */
-  grid-template-columns: 3fr 1fr; /* Creates two equal columns */
+  grid-template-columns: 2.5fr 1fr; /* Creates two equal columns */
   gap: 20px; /* Adds spacing between columns */
   align-items: center; /* Vertically aligns content */
   justify-content: center; /* Centers the grid items horizontally */
@@ -609,7 +559,7 @@ footer {
   justify-content: center;
 }
 .artwork-popup-pic img {
-  max-width: 50%; /* Ensures the image scales within its container */
+  max-width: 70%; /* Ensures the image scales within its container */
   height: auto; /* Maintains aspect ratio */
   object-fit: cover; /* Adjusts how the image is displayed */
 }
@@ -617,7 +567,7 @@ footer {
 
 
 .artwork-popup-des {
-  background-color: #463636;
+  background-color: #dedede;
   display:block;
   flex-direction: column; /* Stack items vertically */
   align-items: flex-start; /* Align items to the start of the container */
@@ -630,7 +580,25 @@ footer {
   padding: 3vw;
 }
 
+.artwork-popup-des-title {
+  text-transform: none;
+  font-size: 2.5vw;
+}
+.artwork-popup-quit {
+  position: absolute; /* Position it absolutely relative to its closest positioned ancestor */
+  top: 10px; /* Adjusts the position from the top of the container */
+  right: 10px; /* Adjusts the position from the right of the container */
 
+  font-size: 1vw; /* Adjusts the size of the "X" icon */
+  font-weight: 400; /* Makes the "X" normal weight */
+  border: 1px solid black; /* Adds a border around the icon */
+  width: 2vw; /* Sets the width of the border box */
+  height: 2vw; /* Sets the height of the border box */
+  cursor: pointer; /* Changes the cursor to a pointer for interactivity */
+  box-sizing: border-box; /* Ensures padding and border are included in size */
+  text-align: center; /* Centers the "X" horizontally */
+  line-height: 2vw; /* Centers the "X" vertically */
+}
 
 
 
