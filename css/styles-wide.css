@@ -66,12 +66,10 @@ a {
 
 body, html {
   text-transform: uppercase;
-
-  background-color: #fefefd;
   display:flex;
   margin: 0;
  
-  padding: 0.3vw;
+  /padding: 0.3vw;
   width: 100vw;
   height: 100vh;
 
@@ -111,8 +109,10 @@ body, html {
   width: 100%;
 
   justify-content: space-between;
-  padding: 0px;
+ 
   position: relative;
+  padding: 0.3vw;
+  box-sizing: border-box; /* Ensures padding is included in dimensions */
 
 }
 
@@ -460,26 +460,41 @@ footer {
   width: 90%;
   /background-color: aquamarine;
   /align-items: center; /* Aligns grid items vertically */
-  margin: 10vw;
+  margin-top: 10vw;
 }
 
+
 .text-vertical {
-  display: grid; /* Enables grid-based alignment */
-  justify-content: start; /* Aligns content to the left */
-  align-items: start; /* Aligns text at the top */
+  display:flexbox; /* Enables grid-based alignment */
+  justify-content: left; /* Aligns content to the left */
+  align-items: start; /* Ensures content starts at the top */
   text-align: left;
+
   width: 100%;
   height: auto; /* Keeps height dynamic */
   /background-color: pink;
-  padding: 2vw; /* Replaces margin for consistent internal spacing */
   box-sizing: border-box; /* Includes padding within the element's dimensions */
-  
 }
+
+.text-vertical-center {
+  display: flex; /* Enables flexbox alignment */
+  flex-direction: column; /* Stacks child elements vertically */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  text-align: center; /* Ensures text is centered */
+  width: 100%;
+  height: 100%; /* Adjusts to fill parent container */
+  box-sizing: border-box; /* Ensures padding is included in dimensions */
+}
+
+
 
 .portrait{
   display: grid; /* Enables grid-based alignment */
   width: 100%;
   align-items: center; /* Aligns grid items vertically */
+  box-sizing: border-box;
+  padding-right: 5vw;
 }
 
 .portrait img {
@@ -488,39 +503,132 @@ footer {
   object-fit: cover;
 }
 
-
-.big-t {
-  font-size: 2vw;
+.artworks {
+  display: grid;
+  grid-template-columns: 1fr 5fr; /* Better proportion */
+  height: auto; /* Makes height dynamic */
+  width: 90%;
+  margin-top: 10vw;
 }
 
-.body-t {
-  font-size: 1.5vw;
-}
-
-.paintings-gallery {
+.all-gallery {
   display: grid; /* Changed to grid */
   width: 100%;
   height: auto;
-  grid-template-columns: repeat(4, 1fr); /* Simplified column definition */
+  grid-template-columns: repeat(2, 1fr); /* Simplified column definition */
   gap: 10px; /* Adds spacing between items */
   padding: 0; /* Simplified syntax */
   position: relative;
+  text-align: center;
+  /background-color: aqua;
 }
 
-.painting-block {
-  position: relative;
+.artwork-block {
+  display: flex; /* Enables flexbox for alignment */
+  flex-direction: column; /* Stacks child elements vertically */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  text-align: center;
   width: 100%; /* Ensures blocks scale correctly within the grid */
   height: auto; /* Maintains aspect ratio of content */
+  margin-bottom: 6vw;
+  padding-left: 7vw; /* Replaces margin for consistent internal spacing */
+  box-sizing: border-box; /* Includes padding within the element's dimensions */
+  position: relative; /* Allows precise positioning if needed */
 }
 
-.painting-block img {
+.artwork-block img {
   width: 100%; /* Ensures the image fills the block's width */
   height: auto; /* Maintains the aspect ratio */
   object-fit: cover; /* Crops the image if necessary to fit the block dimensions */
-  border-radius: 4px; /* Optional: Adds slightly rounded corners */
+}
+
+.artwork-des {
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 1vw;
+}
+
+.big-t {
+  font-size: 3vw;
+  margin-bottom: 2vw;
+}
+
+.medium-t {
+  font-size: 2vw;
+  margin-bottom: 2vw;
+}
+
+.body-t {
+  font-size: 1vw;
+  text-transform: none;
+  line-height: 1.5;
+}
+
+.title-t {
+  margin-top: 1vw;
+}
+
+.artwork-more {
+  display: flex; /* Enables flexbox for alignment */
+  justify-content: center; /* Centers the icon horizontally */
+  align-items: center; /* Centers the icon vertically */
+  font-size: 1vw; /* Adjusts the size of the + icon */
+  font-weight: 400; /* Makes the + icon bold */
+  border: 1px solid black; /* Adds a border around the icon */
+  width: 2vw; /* Sets the width of the circle */
+  height: 2vw; /* Sets the height of the circle */
+  cursor: pointer; /* Changes the cursor to a pointer for interactivity */
+  box-sizing: border-box; /* Ensures padding and border are included in size */
+  text-align: center; /* Centers the text in the element */
+  margin-top: 1vw;
+  margin-left: auto; /* Pushes the icon to the right within its container */
 }
 
 
+
+.artwork-popup-body-box {
+  width: 100vw; /* Ensures it takes full width of the parent */
+  height: auto; /* Makes height dynamic */
+  overflow: hidden;
+}
+
+.artwork-popup-body {
+  display: grid; /* Enables CSS Grid */
+  grid-template-columns: 3fr 1fr; /* Creates two equal columns */
+  gap: 20px; /* Adds spacing between columns */
+  align-items: center; /* Vertically aligns content */
+  justify-content: center; /* Centers the grid items horizontally */
+}
+
+.artwork-popup-pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.artwork-popup-pic img {
+  max-width: 50%; /* Ensures the image scales within its container */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Adjusts how the image is displayed */
+}
+
+
+
+.artwork-popup-des {
+  background-color: #463636;
+  display:block;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the start of the container */
+  justify-content: flex-start; /* Ensure content starts from the top */
+  text-align: left; /* Align text to the left */
+  font-size: 3vw; /* Adjusts text size */
+  width: 100%; /* Ensures the container spans the full width */
+  height: 100vh; /* Ensures it uses the full height of the parent */
+  box-sizing: border-box; /* Includes padding and border in width/height */
+  padding: 3vw;
+}
 
 
 
