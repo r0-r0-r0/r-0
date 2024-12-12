@@ -241,11 +241,7 @@ footer {
   text-align: center;
 }
 
-.thumbphotos img {
-}
 
-.thumbnailgallery a:hover {
-}
 
 .thumbphotos a:hover {
   transform: scale(1); /* Slightly enlarge the image */
@@ -333,9 +329,6 @@ footer {
 
 .next-btn {
   right: 0;
-}
-
-.prev-btn:hover, .next-btn:hover {
 }
 
 /* Video styling */
@@ -499,8 +492,6 @@ footer {
 
 
 @media only screen and (min-width: 1650px) {
-  body {
-  }
 
   .gallery-slideshow {
     width: 80%;

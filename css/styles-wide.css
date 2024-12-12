@@ -395,8 +395,6 @@ footer {
   right: 0;
 }
 
-.prev-btn:hover, .next-btn:hover {
-}
 
 /* Video styling */
 .media-container {
@@ -490,9 +488,6 @@ footer {
   object-fit: cover;
 }
 
-.gallery-block {
-  /* Add any necessary styles here */
-}
 
 .big-t {
   font-size: 2vw;
@@ -658,9 +653,7 @@ footer {
     flex-direction: column; /* Stack items vertically */
   }
 
-  .thumbphotos{
-   
-  }
+
 
 }
 
