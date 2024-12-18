@@ -411,6 +411,7 @@ footer {
   height: auto; /* Makes height dynamic */
   width: 90%;
   margin-top: 10vw;
+  text-transform: none;
 }
 
 
@@ -457,6 +458,7 @@ footer {
   height: auto; /* Makes height dynamic */
   width: 90%;
   margin-top: 10vw;
+  text-transform: none;
 }
 
 .all-gallery {
@@ -504,13 +506,21 @@ footer {
   font-style: normal;
   font-size: 30px;
   margin-bottom: 2vw;
-  text-transform: none;
 }
 
 .medium-t {
   font-size: 2vw;
   margin-bottom: 2vw;
+  line-height: 2rem;
 }
+
+.small-t {
+  font-size: 0.8vw;
+  margin-bottom: 1vw;
+  line-height: 1.1vw;
+}
+
+
 
 .body-t {
   font-size: 1.5vw;
@@ -525,6 +535,7 @@ footer {
 .title-t {
   margin-top: 1vw;
   line-height: 2;
+  font-size: 1vw;
 }
 
 .title-t-sub {
@@ -577,7 +588,7 @@ footer {
 .artwork-popup-des-title {
   text-transform: none;
   font-size: 2.5vw;
-  line-height: 3rem;
+  line-height: 4rem;
   
 }
 
@@ -596,10 +607,18 @@ footer {
   box-sizing: border-box; /* Ensures padding and border are included in size */
   text-align: center; /* Centers the "X" horizontally */
   line-height: 2vw; /* Centers the "X" vertically */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.artwork-popup-quit:hover{
+  background-color: black; /* Changes the background color */
+  color: white; /* Changes the font color */
+  border-color: black; /* Optionally changes the border color */
 }
 
 
-.artwork-enqire {
+
+.artwork-enquire {
   display: flex; /* Enables flexbox for alignment */
   justify-content: center; /* Centers the icon horizontally */
   align-items: center; /* Centers the icon vertically */
@@ -613,7 +632,16 @@ footer {
   box-sizing: border-box; /* Ensures padding and border are included in size */
   text-align: center; /* Centers the text in the element */
   margin-top: 1vw;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
 }
+
+
+.artwork-enquire:hover {
+  background-color: black; /* Changes the background color */
+  color: white; /* Changes the font color */
+  border-color: black; /* Optionally changes the border color */
+}
+
 
 .artwork-more {
   display: flex; /* Enables flexbox for alignment */
@@ -629,11 +657,14 @@ footer {
   text-align: center; /* Centers the text in the element */
   margin-top: 1vw;
   margin-left: auto; /* Pushes the icon to the right within its container */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
 }
 
-
-
-
+.artwork-more:hover {
+  background-color: black; /* Changes the background color */
+  color: white; /* Changes the font color */
+  border-color: black; /* Optionally changes the border color */
+}
 
 @keyframes blurInOut {
   0% {
