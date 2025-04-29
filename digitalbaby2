@@ -1,1 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Baby 2.0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Tiny5&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000000;
+      color: #ffffff;
+      
+
+
+      font-family: "Tiny5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+ 
+
+
+  
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+
+      position: relative;
+    }
+
+    model-viewer {
+      width: 100%;
+      max-width: 400px;
+      height: 60vh;
+    }
+
+    #sentence-box-des {
+    z-index: 2;
+    
+  }
+
+    #sentence-box {
+    position: absolute; /* ⬅️ 고정! */
+    bottom: 0; /* ⬅️ 맨 아래 붙이기 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 80vw;
+    padding: 20px;
+    text-align: center;
+    font-family: "Coral Pixels", serif;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 3;
+    
+  }
+
+  #title {
+    font-size: 1.5vh;
+    font-weight: 600;
+    background: linear-gradient(90deg, red, red, red, yellow, rgb(190, 255, 190), rgb(162, 123, 248), violet, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+
+  #subtitle {
+    font-size: 1vh;
+    max-width: 50vw;
+    font-family: Montserrat;
+  }
+
+  #sentence {
+    font-size: 1.2em;
+    padding: 20px 16px;
+    margin-top: 10px; /* 줄임 */
+    background-color: #fff;
+    color: #000;
+
+    overflow-wrap: break-word; 
+  word-break: break-word;    
+  white-space: normal;        
+  max-width: 90vw;            
+  max-height: 30vh;           
+  overflow-y: auto; 
+    
+  }
+
+  .blink {
+  animation: blink 0.7s step-start infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+  button {
+    margin-top: 10px;
+    font-size: 0.8em;
+    padding: 8px 16px;
+    background-color: #f6f6f681;
+    color: rgb(255, 255, 255);
+ 
+   
+    cursor: pointer;
+
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  button:hover{
+    color: rgb(255, 0, 204);
+  }
+
+    @media (max-height: 600px) {
+      model-viewer {
+        height: 45vh;
+      }
+
+      #sentence {
+        font-size: 1em;
+      }
+
+      button {
+        font-size: 0.9em;
+        padding: 6px 12px;
+      }
+
+    }
+
+    #footer {
+  position: fixed; /* 고정! */
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.5em;
+  background-color: #000; /* 배경색 (사이트랑 자연스럽게) */
+  color: #888; /* 글자 색 (연하게) */
+  z-index: 10; /* 다른 요소들 위에 올라오게 */
+}
+
+      
+  </style>
+</head>
+<body>
+  
+  <audio id="bg-music" src="baby.wav" autoplay loop></audio>
+  <model-viewer src="sinlord_solo.glb" auto-rotate camera-controls  shadow-intensity="1.8" exposure="0.71" shadow-softness="0.5"></model-viewer>
+  
+
+  <div id="sentence-box-des">
+    <p id="title">DIGITAL BABY 2.0</p>
+    <p id="subtitle">
+      Digital Baby 2.0 is artificially grown in the Internet’s womb,<br>
+      trained on its chaos, echoing emotions, mistakes, and fragments of human nature<br>— a mirror of our own imperfection."
+     
+    </p>
+    <button onclick="startMusic(); updateSentence();">Listen</button>
+  </div>
+
+  <div id="sentence-box">
+   
+    <p id="sentence">
+      <span id="sentence-text" class="blink">"___________"</span></p>
+  </div>
+
+
+
+  <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+  const bgMusic = document.getElementById('bg-music');
+
+  window.startMusic = function() {
+    bgMusic.volume = 0.1;
+    bgMusic.play();
+  };
+});
+
+
+
+
+
+
+    const articles = ['the', 'a', 'an'];
+const nouns = ['sex', 'Trump', 'achievement', 'sugarbaby', 'daddy', 'activities', 'advantage', 'adventures', 'anyone', 'approval', 'art', 'attention', 'baker', 'batch', 'bargain', 'bed', 'beliefs', 'bigotry', 'breakfast', 'BS', 'bucket', 'buffet', 'burger', 'cake', 'calories', 'candy', 'career', 'careers', 'caring', 'charge', 'cheesecake', 'chicken', 'chips', 'cleaning', 'climate change', 'collaborating', 'company', 'concepts', 'connection', 'coffee', 'cook', 'cookies', 'cost', 'country', 'credit', 'customer service', 'dessert', 'diet', 'dinner', 'direction', 'discrimination', 'door', 'dreams', 'eat', 'else', 'events', 'everyone', 'everything', 'exercising', 'experiences', 'fact', 'face', 'families', 'field', 'filter', 'fitness', 'food', 'fries', 'friends', 'fun', 'gadgets', 'gym', 'guns', 'global warming', 'harassment', 'hate', 'healthy meal', 'heart', 'he', 'help', 'homelessness', 'hope', 'house', 'I', 'ice cream', 'ignorance', 'IG', 'influencer', 'income', 'injustices', 'intelligence', 'instructions', 'issues', 'job', 'jobs', 'junk food', 'kind', 'law', 'level', 'life', 'look', 'look-out', 'low-level', 'lunch', 'maker', 'magic trick', 'matters', 'mask', 'meal', 'me', 'media', 'mess', 'mistakes', 'model', 'money', 'myself', 'net worth', 'no one', 'nothing', 'one', 'online', 'opportunities', 'order', 'outfit', 'other', 'pandemic', 'park', 'partner', 'pajama', 'people', 'person', 'politician', 'political BS', 'political', 'situation', 'pants', 'planet', 'plate', 'pleasures', 'pizza', 'play', 'politician', 'post', 'poverty', 'power', 'progress', 'project', 'responsibility', 'respect', 'restaurant', 'room', 'rules', 'salad', 'seafood', 'security', 'service', 'shape', 'sharing', 'she', 'situation', 'side', 'skills', 'social media', 'society', 'song', 'side', 'single', 'soulmate', 'sports', 'stage', 'store', 'study', 'success', 'taste', 'takeout', 'talent', 'tea', 'technology', 'they', 'thing', 'time', 'top', 'trolls', 'time', 'ways', 'we', 'wealth', 'what', 'who', 'working', 'work', 'world', 'wifi', 'Wilde side', '5-course meal', 'all-you-can-eat buffet', 'a whole cheesecake', 'seafood', 'entire bag of candy', 'two extra-large pizzas', 'a whole plate of nachos', 'pleasure', 'hbo', 'video games', 'enough', 'no matter'];
+const verbs = ['fuck', 'goon', 'access', 'act', 'admit', 'achieve', 'achieve', 'afford', 'associate', 'ask', 'eat', 'back down', 'become', 'believe', 'blink', 'bother', 'book', 'be born', 'can', 'care', 'catch', 'chat', 'clean', 'come', 'connect', 'cook', 'count', 'cry', 'cut', 'demand', 'deliver', 'deserve', 'desire', 'discover', 'discriminate', 'do', 'drop', 'done', 'eat', 'envy', 'explore', 'feel', 'find', 'finish', 'find', 'forgive', 'get', 'gift', 'get', 'give', 'go', 'grasp', 'grow', 'have', 'handle', 'hate', 'have', 'handle', 'hear', 'help', 'hope', 'ignore', 'improve', 'invite', 'is', 'know', 'leave', 'like', 'listen', 'look', 'lose', 'make', 'match', 'marry', 'matter', 'mess', 'meet', 'need', 'own', 'order', 'play', 'post', 'pray', 'procrastinate', 'promise', 'provide', 'receive', 'resist', 'ruin', 'serve', 'seem', 'sell', 'shut', 'skip', 'spout', 'start', 'stare', 'stop', 'stick', 'study', 'sweep', 'take', 'travel', 'try', 'understand', 'want', 'watch', 'warn', 'wake up', 'go', 'wish', 'will not', 'work', 'is', 'are', 'am', 'indulge', 'swoon', 'not interested', 'frustrate', 'bless'];
+const adverbs = ['sick', 'always', 'born', 'effortlessly', 'even', 'exclusively', 'hard', 'how', 'latest', 'like', 'naturally', 'not', 'same', 'seemingly', 'so', 'still', 'successfully', 'again', 'all day', 'anything', 'just', 'later', 'never', 'online', 'right now', 'today', 'no matter what', 'deserve the best', 'only whatever I want', 'not for anyone else', 'only for myself', 'always looking for the latest and greatest to be satisfied', 'even if it means being unethical', 'never satisfied and always want more', 'only do well, but it is never enough to get ahead financially', 'to cut corners, but not interested in giving or helping others', 'always on the lookout for a good deal, but not interested in sharing or collaborating', 'only looking for ways to increase for myself and anyone else', 'no one can match me', 'all on my own', 'all the credit', 'wont', 'only', 'right', 'too', 'beneath', 'most', 'in the room', 'always', 'better', 'on things that dont matter', 'in the room', 'smartest', 'no one can match', 'always', 'dont own', 'with people who arent at my level', 'ever', 'at the top', 'most', 'in my life', 'just', 'by', 'myself', 'right now', 'silly', 'still', 'easily', 'no matter how', 'pretty sure', 'absolutely', 'never', 'again', 'together', 'for once', 'so', 'how', 'now', 'before', 'too', 'online', 'even', 'better', 'literally', 'probs', 'jealous', 'delusional', 'really', 'closely', 'even', 'still', 'maybe', 'just', 'totally', 'financially', 'seemingly', 'excessively', 'absolutely'
+];
+const adjectives = ['lowkey', 'All', 'always', 'amazing', 'anything', 'attractive', 'annoyed', 'beautiful', 'bed', 'beneath', 'best', 'best-dressed', 'big', 'beyond', 'clean', 'compare', 'creative', 'cute', 'decadent', 'difficult', 'effortless', 'else', 'enraging', 'envious', 'entire', 'frustrated', 'frustrating', 'free', 'gifted', 'glowing', 'greatest', 'happy', 'hard', 'healthy', 'hottie', 'hot', 'hurtful', 'ignorant', 'important', 'incompetent', 'intelligent', 'junk', 'juicy', 'lazy', 'latest', 'loving', 'lucky', 'more', 'my', 'natural', 'new', 'none', 'online', 'only', 'outgoing', 'pajamas', 'park', 'perfect', 'physical', 'privileged', 'productive', 'put-together', 'purposeful', 'respected', 'right', 'sick', 'social', 'sociable', 'still', 'stuck', 'struggling', 'stylish', 'successful', 'supportive', 'talented', 'terrible', 'the', 'tired', 'too', 'tomorrow', 'unprofessional', 'unacceptable', 'unfair', 'upset', 'wealthy', 'whole', 'who', 'wise', 'with', 'petty', 'good', 'beautiful', 'hot', 'glad', 'done', 'wild', 'innocent', 'hot', 'cute', 'late', 'two', 'favorite', 'ready', '100%', 'unethical', 'enough', 'angry', 'ignorant', 'sick', 'sad', 'sorry', 'guilty', 'lucky', 'delusional'];
+const prepositions = ['of', 'at', 'while', 'like to', 'the', 'in', 'with', 'without', 'from', 'to', 'through', 'until', 'for', 'on', 'over', 'or', 'beneath', 'None', 'around', 'than', 'and', 'my', 'own', 'else', 'second', 'about', 'off', 'that', 'if', 'beyond', 'up', 'against', 'right', 'up to', 'this', 'besides'];
+const exclamations = ['Hella', 'Fire','Yaaas', 'Lit', 'OMG', 'Bae', 'Savage', 'Thicc', 'I cant even!', 'Squad goals', 'Slay', 'Bye', 'Yikes', 'Salty', 'Goals', 'Extra', 'Ghosted', 'Mood', 'TF',  'Lit AF', 'Gosh', 'Ouch', 'Cool', 'Eh', 'Oh no', 'Ahem', 'Oops', 'Huh', 'Jeez', 'Ha', 'Well'];
+
+function randomChoice(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function generateSentence() {
+  let sentence = '';
+
+  if (randomInt(0, 1)) {
+    sentence += randomChoice(articles) + ' ';
+    sentence += randomChoice(adjectives) + ' ';
+    sentence += randomChoice(nouns) + ' ';
+  }
+
+  if (randomInt(0, 1)) {
+    sentence += randomChoice(prepositions) + ' ';
+    sentence += randomChoice(articles) + ' ';
+    sentence += randomChoice(adjectives) + ' ';
+    sentence += randomChoice(nouns) + ' ';
+    sentence += randomChoice(verbs) + ' ';
+  }
+
+  if (randomInt(0, 1)) {
+    sentence += randomChoice(prepositions) + ' ';
+    sentence += randomChoice(articles) + ' ';
+    sentence += randomChoice(adjectives) + ' ';
+    sentence += randomChoice(nouns) + ' ';
+    sentence += randomChoice(adverbs) + (Math.random() < 0.5 ? '.' : '!');
+  }
+
+  if (randomInt(0, 3) === 0) {
+    sentence += ' ' + randomChoice(exclamations) + (Math.random() < 0.5 ? '!' : '!!');
+  }
+
+  if (randomInt(0, 1) === 0) {
+    sentence += randomChoice(exclamations) + (Math.random() < 0.5 ? '!' : '!!') + ' ';
+    sentence += randomChoice(prepositions) + ' ';
+    sentence += randomChoice(articles) + ' ';
+    sentence += randomChoice(adjectives) + ' ';
+    sentence += randomChoice(nouns) + ' ';
+  }
+
+  return sentence.charAt(0).toUpperCase() + sentence.slice(1);
+}
+
+function updateSentence() {
+  const newSentence = generateSentence();
+  typeSentence(newSentence); 
+}
+
+
+
+
+let typingTimer = null; // 👈 애니메이션 타이머 저장 변수
+
+function updateSentence() {
+  if (typingTimer) {
+    clearTimeout(typingTimer); // 👈 기존 타이핑 중단
+    typingTimer = null;
+  }
+
+  const newSentence = generateSentence();
+  typeSentence(newSentence); 
+}
+
+
+
+
+function typeSentence(sentence) {
+  const sentenceEl = document.getElementById('sentence');
+  sentenceEl.innerHTML = ''; 
+  let i = 0;
+
+  function type() {
+    if (i < sentence.length) {
+      const char = sentence.charAt(i);
+      sentenceEl.innerHTML += (char === ' ') ? '&nbsp;' : char;
+      i++;
+      typingTimer = setTimeout(type, 33); // 👈 타이머 ID 저장
+    } else {
+      typingTimer = null; // 👈 애니메이션 완료 후 초기화
+    }
+  }
+
+  type();
+}
+
+
+
+
+
+  </script>
+
+
+<footer id="footer">
+  © 2025 Ayoon Ro. All rights reserved.
+</footer>
+
+</body>
+</html>
 
