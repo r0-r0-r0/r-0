@@ -275,6 +275,17 @@ function updateSentence() {
 
 function typeSentence(sentence) {
   const sentenceEl = document.getElementById('sentence');
+
+   if (sentence.length >= 40) {
+    sentenceEl.style.fontSize = '1.3vh';
+  } else {
+    sentenceEl.style.fontSize = '1.7vh'; 
+  }
+
+
+  
+  
+  
   sentenceEl.innerHTML = ''; 
   let i = 0;
 
