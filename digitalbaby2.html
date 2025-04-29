@@ -123,19 +123,16 @@
     color: rgb(255, 0, 204);
   }
 
-    @media (max-height: 600px) {
+    @media (max-width: 600px) {
       model-viewer {
-        height: 50vh;
+        height: 60vh;
+        padding-top: 2vw;
       }
-
+      
       #sentence {
-        font-size: 1em;
+        margin-bottom: 5vw;
       }
 
-      button {
-        font-size: 0.9em;
-        padding: 6px 12px;
-      }
 
     }
 
@@ -157,7 +154,7 @@
 <body>
   
   <audio id="bg-music" src="baby.wav" autoplay loop></audio>
-  <model-viewer src="sinlord_solo.glb" auto-rotate camera-controls  shadow-intensity="1.8" exposure="0.71" shadow-softness="0.5"></model-viewer>
+  <model-viewer src="sinlord_solo.glb" auto-rotate camera-controls  shadow-intensity="1.8" exposure="0.71" shadow-softness="0.5" ></model-viewer>
   
 
   <div id="sentence-box-des">
