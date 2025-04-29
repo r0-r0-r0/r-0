@@ -39,7 +39,7 @@
     model-viewer {
       width: 100%;
       max-width: 400px;
-      height: 60vh;
+      height: 70vh;
     }
 
     #sentence-box-des {
@@ -48,8 +48,8 @@
   }
 
     #sentence-box {
-    position: absolute; /* ⬅️ 고정! */
-    bottom: 0; /* ⬅️ 맨 아래 붙이기 */
+    position: absolute; 
+    bottom: 0; 
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -73,7 +73,7 @@
 
   #subtitle {
     font-size: 1vh;
-    max-width: 50vw;
+    max-width: 55vw;
     font-family: Montserrat;
   }
 
@@ -124,7 +124,7 @@
 
     @media (max-height: 600px) {
       model-viewer {
-        height: 45vh;
+        height: 60vh;
       }
 
       #sentence {
@@ -139,15 +139,15 @@
     }
 
     #footer {
-  position: fixed; /* 고정! */
+  position: fixed; 
   bottom: 0;
   width: 100%;
   text-align: center;
   padding: 10px 0;
   font-size: 0.5em;
-  background-color: #000; /* 배경색 (사이트랑 자연스럽게) */
-  color: #888; /* 글자 색 (연하게) */
-  z-index: 10; /* 다른 요소들 위에 올라오게 */
+  background-color: #000; 
+  color: #888; 
+  z-index: 10; 
 }
 
       
@@ -258,11 +258,11 @@ function updateSentence() {
 
 
 
-let typingTimer = null; // 👈 애니메이션 타이머 저장 변수
+let typingTimer = null; 
 
 function updateSentence() {
   if (typingTimer) {
-    clearTimeout(typingTimer); // 👈 기존 타이핑 중단
+    clearTimeout(typingTimer); 
     typingTimer = null;
   }
 
@@ -277,9 +277,9 @@ function typeSentence(sentence) {
   const sentenceEl = document.getElementById('sentence');
 
    if (sentence.length >= 40) {
-    sentenceEl.style.fontSize = '1.3vh';
+    sentenceEl.style.fontSize = '1.45vh';
   } else {
-    sentenceEl.style.fontSize = '1.7vh'; 
+    sentenceEl.style.fontSize = '1.8vh'; 
   }
 
 
@@ -294,9 +294,9 @@ function typeSentence(sentence) {
       const char = sentence.charAt(i);
       sentenceEl.innerHTML += (char === ' ') ? '&nbsp;' : char;
       i++;
-      typingTimer = setTimeout(type, 33); // 👈 타이머 ID 저장
+      typingTimer = setTimeout(type, 33); 
     } else {
-      typingTimer = null; // 👈 애니메이션 완료 후 초기화
+      typingTimer = null; 
     }
   }
 
